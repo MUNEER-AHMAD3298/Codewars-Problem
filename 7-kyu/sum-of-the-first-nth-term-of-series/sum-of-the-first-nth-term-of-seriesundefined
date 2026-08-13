@@ -1,0 +1,26 @@
+#include <string>
+#include <vector>
+#include <cmath>
+std::string seriesSum(int n)
+{
+  std::string ans;
+  std::string final_ans;
+  float sum=0.00;
+  float a=1.00;
+    for(int i=1;i<=n;i++)
+      {
+      sum+=(1/a);
+      a+=3.00;
+    }
+  sum=std::round(sum * 100.0f) / 100.0f;
+  ans+= std::to_string(sum);
+  int i=0;
+  while(ans[i] != '.'){
+final_ans+=ans[i];
+i++;
+  }
+  final_ans+='.';
+  final_ans+=ans[i+1];
+  final_ans+=ans[i+2];
+  return final_ans;
+}
