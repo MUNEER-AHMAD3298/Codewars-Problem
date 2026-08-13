@@ -1,0 +1,20 @@
+std::pair<std::size_t, std::size_t> two_sum(const std::vector<int>& numbers, int target) {
+  int index1, index2;
+  bool flag=true;
+  for(size_t i=0;i<numbers.size()-1;i++)
+    {
+    for(size_t j=i+1;j<numbers.size();j++)
+      {
+      if(numbers[i]+numbers[j]==target){
+        flag=false;
+        index1=i;
+        index2=j;
+        break;
+        }
+    }
+    if(flag==false)
+      break;
+  }
+  return {index1, index2};
+    
+}
