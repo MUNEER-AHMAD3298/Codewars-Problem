@@ -1,0 +1,25 @@
+#include <string>
+#include <vector>
+​
+std::string odd_or_even(const std::vector<int> &arr)
+{
+  long long int sum=0;
+  
+  if(arr.size()==0)
+  return "even";
+  else{
+    for(size_t i=0;i<arr.size();i++)
+    sum+=arr[i];
+    
+    if(sum<0){
+      sum=sum*-1;
+    }
+     
+    if(sum%2==0)
+      return "even";
+    else
+    return "odd";
+     
+  }
+  
+}
