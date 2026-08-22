@@ -1,0 +1,25 @@
+#include <string>
+#include <cctype>
+​
+bool isPalindrom (const std::string& str)
+{
+    std::string s = str;
+    
+    for (size_t i = 0; i < s.length(); i++) {
+        s[i] = tolower(s[i]);
+    }
+    
+    int start = 0;
+    int end = s.size() - 1;
+    
+    while (start < end) {
+        if (s[start] != s[end]) {
+            return false;
+        }
+        start++;
+        end--;
+    }
+    
+    return true;
+}
+​
