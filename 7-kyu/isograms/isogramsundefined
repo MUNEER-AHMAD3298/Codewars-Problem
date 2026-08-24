@@ -1,0 +1,30 @@
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <vector>
+​
+bool is_isogram(const std::string& str)
+{
+  std::string s = str;
+  bool flag=true;
+  std::vector<int>v(26,0);
+  if(s.size()==0)
+    return true;
+  else{
+    for(size_t i=0;i<s.size();i++){
+       s[i] = tolower(s[i]);
+      v[s[i]-97]++;
+      }
+    for(size_t i=0;i<s.size();i++){
+     if(v[s[i]-97]>1){
+       flag=false;
+       break;
+     }
+      }
+    if(flag)
+      return true;
+    else 
+      return false; 
+  }
+}
+​
