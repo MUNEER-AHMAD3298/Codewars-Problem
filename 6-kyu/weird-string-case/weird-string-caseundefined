@@ -1,0 +1,24 @@
+#include <string>
+#include <string_view>
+#include <cctype>
+​
+std::string to_weird_case(std::string_view str) {
+  std::string s = std::string(str);
+  int count = 0;
+  
+  for(size_t i = 0; i < s.size(); i++){
+    if(s[i] == ' '){
+      count = 0;
+      continue;
+    }
+    
+    if(count % 2 == 0) {
+      s[i] = std::toupper(s[i]);
+    } else {
+      s[i] = std::tolower(s[i]); 
+    }
+    count++;
+  }
+  return s;
+}
+​
