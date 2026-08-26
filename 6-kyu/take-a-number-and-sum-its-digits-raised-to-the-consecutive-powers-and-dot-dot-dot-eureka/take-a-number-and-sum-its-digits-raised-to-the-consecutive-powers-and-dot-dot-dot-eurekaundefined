@@ -1,0 +1,19 @@
+#include <vector>
+#include <string>
+#include <cmath>
+std::vector<unsigned int> sumDigPow(unsigned int a, unsigned int b) {
+  std::vector<unsigned int>v;
+  for(unsigned int i=a;i<=b;i++){
+    std::string s=std::to_string(i);
+    unsigned long long int sum=0;
+    for(size_t j=0;j<s.size();j++){
+      sum+=pow((s[j]-'0'),j+1);
+    }
+  if(sum==i)
+    v.push_back(i);
+    
+  }
+    return v;
+ 
+  
+}
