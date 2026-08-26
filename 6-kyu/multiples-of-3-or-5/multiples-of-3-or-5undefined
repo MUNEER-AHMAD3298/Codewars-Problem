@@ -1,0 +1,16 @@
+int solution(int number) 
+{
+  bool flag=true;
+  long long int sum=0;
+  for(int i=3;i<number;i++){
+    flag=true;
+    if(i%3==0){
+      sum+=i;
+      flag=false;
+      }
+    if(i%5==0&&flag==true)
+      sum+=i;
+  }
+  return sum;
+​
+}
