@@ -1,0 +1,22 @@
+int digital_root(int n)
+{
+   long long int sum=0;
+  
+  int a=n;
+  int rem;
+  while(a!=0){
+    rem=a%10;
+    a=a/10;
+    sum+=rem; 
+  }
+ while(sum>9){
+    long long int sum1=0;
+    while(sum!=0){
+      rem=sum%10;
+      sum=sum/10;
+      sum1+=rem;
+    }
+    sum=sum1;
+  }
+  return sum;
+  }
